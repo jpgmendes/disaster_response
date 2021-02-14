@@ -6,7 +6,7 @@ This project is an introduction to Disaster Response Analysis.
 First we're analyzing messages sent by population who suffered a disaster (hurricane or earthquake are examples)
 
 
-INSTALLATION
+## INSTALLATION
 
 You just need to download the .db which are the dataset to input in the model.
 
@@ -22,7 +22,7 @@ Dependencies:
     nltk (>= 3.5) https://www.nltk.org/
     scikit-learn (>= 0.23.2) https://scikit-learn.org
 
-Project motivation
+### Project motivation
 
 For this project we're trying to predict the needs from population in the middle of disaster and connect people who offers help to people who needs help.
 
