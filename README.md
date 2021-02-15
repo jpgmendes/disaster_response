@@ -26,5 +26,6 @@ Dependencies:
 
 For this project we're trying to predict the needs from population in the middle of disaster and connect people who offers help to people who needs help.
 
+### Contribution
 
 You're free to use and to contribute to the development of this project.
