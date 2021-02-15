@@ -10,8 +10,8 @@ First we're analyzing messages sent by population who suffered a disaster (hurri
 
 You just need to download the .db which are the dataset to input in the model.
 
-process_data.py is the file where the messages are processed.
-train_classifier.py is the file to train the model (it can take several hours considering the grid search performed).
+    process_data.py is the file where the messages are processed.
+    train_classifier.py is the file to train the model (it can take several hours considering the grid search performed).
 
 run.py is a file to run an html front-end to use the model in new inputs.
 
