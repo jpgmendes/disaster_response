@@ -8,12 +8,10 @@ First we're analyzing messages sent by population who suffered a disaster (hurri
 
 ## INSTALLATION
 
-You just need to download the .db which are the dataset to input in the model.
+You need to download the .db which are the dataset to input in the model.
 
 - process_data.py is the file where the messages are processed.
 - train_classifier.py is the file to train the model (it can take several hours considering the grid search performed).
-
-run.py is a file to run an html front-end to use the model in new inputs.
 
 Dependencies:
 
@@ -30,3 +28,16 @@ For this project we're trying to predict the needs from population in the middle
 ### Contribution
 
 You're free to use and to contribute to the development of this project.
+
+## INSTRUCTIONS
+
+The following commands have to be executed in order to clean data and train a classifier
+
+    python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+    python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+
+Then run the app to execute the front-end system classifier
+
+    python run.py
+    
+Go to http://0.0.0.0:3001/
