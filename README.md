@@ -18,6 +18,7 @@ run.py is a file to run an html front-end to use the model in new inputs.
 Dependencies:
 
     python (>= 3.6) https://www.python.org/downloads/
+    pickle object serialization (available in python 3.6)
     pandas (>= 1.0.0) https://pandas.pydata.org/
     nltk (>= 3.5) https://www.nltk.org/
     scikit-learn (>= 0.23.2) https://scikit-learn.org
