@@ -1,10 +1,30 @@
 # disaster_response
+
 Disaster Response Project
 
 This project is an introduction to Disaster Response Analysis.
 
 First we're analyzing messages sent by population who suffered a disaster (hurricane or earthquake are examples)
 
+## FILE DESCRIPTION
+
+    .
+    ├── app     
+    │   ├── run.py                           # Flask file that runs app
+    │   └── templates   
+    │       ├── go.html                      # Classification result page of web app
+    │       └── master.html                  # Main page of web app    
+    ├── data                   
+    │   ├── disaster_categories.csv          # Dataset including all the categories  
+    │   ├── disaster_messages.csv            # Dataset including all the messages
+    │   └── process_data.py                  # Data cleaning
+    ├── models
+    │   ├── train_classifier.py              # Train ML model
+    │   └── classifier.pkl                   # pickle file of model   
+    |   
+    |── requirements.txt                     # contains versions of all libraries used.
+    |
+    └── README.md
 
 ## INSTALLATION
 
@@ -41,3 +61,5 @@ Then run the app to execute the front-end system classifier
     python run.py
     
 Go to http://0.0.0.0:3001/
+
+
