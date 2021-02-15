@@ -4,6 +4,7 @@ nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger', 'stopwords'])
 # import libraries
 import numpy as np
 import pandas as pd
+import pickle
 import re
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
