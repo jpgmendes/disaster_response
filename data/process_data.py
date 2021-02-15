@@ -6,6 +6,10 @@ from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
     
+    '''Function to load data. messages_filepath and categories_filepath is
+       ../directory/messages.csv and ../directory/categories.csv
+    '''
+    
     messages = pd.read_csv(str(messages_filepath), sep=',')
     categories = pd.read_csv(str(categories_filepath), sep=',')
     
@@ -14,6 +18,10 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+    
+    '''Function to clean dataset, it gets the dataframe output from load_data() and returns the dataframe with the target
+       splitted in one column each.
+    '''
     
     categories = df.categories.str.split(';', expand=True)
     
@@ -33,10 +41,17 @@ def clean_data(df):
 
 def save_data(df, database_filename):
     
+    '''Function to save the datasets in a single SQL database.
+    '''
+    
     engine = create_engine('sqlite:///'+str(database_filename))
     df.to_sql('messages_etl', engine, index=False)
 
 def main():
+    
+    ''' Main functio to call process_data process
+    '''
+    
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
