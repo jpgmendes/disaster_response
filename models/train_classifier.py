@@ -25,6 +25,10 @@ from sqlalchemy import create_engine
 
 def load_data(database_filepath):
     
+    '''Function to load data in the project. The database_filepath is ../Directory/Database.db
+       It outputs the data sliced in X (independent variable), Y (target) and category names of the targets.
+    '''
+    
     engine = create_engine('sqlite:///'+str(database_filepath))
     df = pd.read_sql_table('messages_etl', con=engine)
     
@@ -36,6 +40,10 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    
+    '''tokenize gets the text input and return it in words already lemmatized, stripped, without dots or commas
+       and with no stopwords.    
+    '''
     
     stop_words = stopwords.words('english')
     tokens = word_tokenize(re.sub('[.:,;-]', ' ', text))
@@ -50,6 +58,10 @@ def tokenize(text):
     return clean_tokens
 
 def build_model():
+    
+    '''Function to return a model pipeline with RandomForestClassifier passed through GridSearch 
+    
+    '''
     
     pipeline = Pipeline([('vect', CountVectorizer(tokenizer=tokenize)),
                          ('tfidf', TfidfTransformer()),
@@ -66,6 +78,11 @@ def build_model():
 
 def evaluate_model(model, X_test, Y_test, category_names):
     
+    '''Function to evaluate the model in a classification report.
+       Input model, X_test (real input values sliced before), Y_test (real target values sliced before)
+       and category_names to loop for in.
+    '''
+    
     y_pred = model.predict(X_test)
     
     for i in range(len(category_names)):
@@ -76,11 +93,18 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 def save_model(model, model_filepath):
     
+    '''Function to save the model in a pickle file.
+    '''
+    
     with open(str(model_filepath), 'wb') as f:
         pickle.dump(model, f)
 
 
 def main():
+    
+    '''Main function to call the train_classifier
+    '''
+    
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
