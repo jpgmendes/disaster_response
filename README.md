@@ -10,10 +10,9 @@ First we're analyzing messages sent by population who suffered a disaster (hurri
 
     .
     ├── app     
-    │   ├── run.py                           # Flask file that runs app
-    │   └── templates   
-    │       ├── go.html                      # Classification result page of web app
-    │       └── master.html                  # Main page of web app    
+    │   ├── run.py                       # Flask file that runs app
+    │   ├── go.html                      # Classification result page of web app
+    │   └── master.html                  # Main page of web app    
     ├── data                   
     │   ├── disaster_categories.csv          # Dataset including all the categories  
     │   ├── disaster_messages.csv            # Dataset including all the messages
